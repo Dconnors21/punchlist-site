@@ -8,6 +8,7 @@
 <meta property="og:title" content="Punchlist — Built for the truck, not the office">
 <meta property="og:description" content="Look like the bigger company. Get paid like one. The whole job runs from your phone — $50/mo flat, no per-user fees.">
 <meta name="theme-color" content="#0D0C0B">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -64,7 +65,7 @@ header{position:fixed;inset:0 0 auto 0;z-index:90;transition:background .35s,bor
 header.solid{background:rgba(13,12,11,.85);backdrop-filter:blur(14px);border-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:-.02em}
-.logo .lp{width:33px;height:33px;border-radius:8px;background:var(--or);display:grid;place-items:center;font-size:17px;font-weight:900;color:#160A03}
+.logo .lp{width:33px;height:33px;display:block;flex-shrink:0}
 .nl{display:flex;gap:32px;align-items:center}
 .nl a{font-size:15px;font-weight:600;color:var(--sub);transition:color .2s}
 .nl a:hover{color:var(--ink)}
@@ -345,7 +346,7 @@ footer{border-top:1px solid var(--line);padding:38px 0;background:var(--bg2)}
 <!-- ================================ NAV -->
 <header id="hdr">
   <div class="wrap nav">
-    <a class="logo" href="#hero"><span class="lp">P</span>Punchlist</a>
+    <a class="logo" href="#hero"><svg class="lp" viewBox="0 0 100 100" aria-hidden="true"><rect x="4" y="4" width="92" height="92" rx="24" fill="#FF5A1F"/><path d="M30 55 L46 71 L74 35" fill="none" stroke="#160A03" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>Punchlist</a>
     <nav class="nl">
       <a href="#flow">How it works</a>
       <a href="#real">The app</a>
@@ -722,7 +723,7 @@ footer{border-top:1px solid var(--line);padding:38px 0;background:var(--bg2)}
 
 <footer>
   <div class="wrap fgrid">
-    <a class="logo" href="#hero" style="font-size:17px"><span class="lp" style="width:28px;height:28px;font-size:14px">P</span>Punchlist</a>
+    <a class="logo" href="#hero" style="font-size:17px"><svg class="lp" viewBox="0 0 100 100" aria-hidden="true" style="width:28px;height:28px"><rect x="4" y="4" width="92" height="92" rx="24" fill="#FF5A1F"/><path d="M30 55 L46 71 L74 35" fill="none" stroke="#160A03" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>Punchlist</a>
     <div class="sm">Punchlist by Dorian Connors &amp; Cole Fails · Dorian: <a href="tel:8144135266">814-413-5266</a> · <a href="mailto:DorianConnors@gmail.com">DorianConnors@gmail.com</a> · Cole: <a href="tel:8148819715">814-881-9715</a> · <a href="mailto:cfails43@gmail.com">cfails43@gmail.com</a></div>
     <div class="sm">© 2026 Punchlist</div>
   </div>
