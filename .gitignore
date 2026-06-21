@@ -1,0 +1,4 @@
+# local preview helpers — not part of the deployed site
+server.cjs
+.claude/
+*backup*.html
