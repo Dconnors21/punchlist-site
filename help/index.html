@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help &amp; Guides — Punchlist</title>
+<meta name="description" content="Learn how to run your whole business from Punchlist — setup, bids, contracts, getting paid, the client portal, and more.">
+<meta name="theme-color" content="#0D0C0B">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Punchlist — Help &amp; Guides">
+<meta property="og:description" content="Everything you need to run your business from Punchlist.">
+<meta property="og:image" content="https://runpunchlist.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0D0C0B; --panel:#16130E; --panel2:#1C1913; --line:#2A2620;
+    --bone:#EDEAE3; --muted:#A79E90; --dim:#7A7266; --or:#FF5A1F; --or2:#FF7A3C;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ink);color:var(--bone);
+    font-family:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:40;background:rgba(13,12,11,.86);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hd{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .hd .lo{height:24px;width:auto;display:block}
+  .hd .rt{display:flex;align-items:center;gap:18px;font-size:14px;font-weight:600}
+  .hd .rt a.back{color:var(--muted)}
+  .hd .rt a.back:hover{color:var(--bone)}
+  .hd .cta{background:var(--or);color:#160A03;font-weight:800;padding:8px 15px;border-radius:9px;text-decoration:none;transition:background .18s}
+  .hd .cta:hover{background:var(--or2)}
+  @media(max-width:560px){.hd .rt a.back{display:none}}
+
+  /* hero */
+  .hero{padding:52px 0 30px;border-bottom:1px solid var(--line)}
+  .kick{color:var(--or);font-weight:800;font-size:12px;letter-spacing:.16em;margin-bottom:12px}
+  .hero h1{font-size:40px;font-weight:900;letter-spacing:-.03em;margin:0 0 12px;line-height:1.03}
+  .hero p{color:var(--muted);font-size:16px;max-width:620px;margin:0 0 24px}
+  .search{position:relative;max-width:560px}
+  .search input{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    color:var(--bone);font-family:inherit;font-size:16px;padding:14px 16px 14px 46px;outline:none;transition:border-color .18s,box-shadow .18s}
+  .search input:focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(255,90,31,.18)}
+  .search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:19px;height:19px;stroke:var(--dim)}
+
+  /* demo strip */
+  .demo{display:flex;align-items:center;gap:16px;background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;padding:16px 18px;margin-top:22px}
+  .demo .ic{width:44px;height:44px;border-radius:11px;background:rgba(255,90,31,.12);display:flex;align-items:center;justify-content:center;flex:none}
+  .demo .ic svg{width:20px;height:20px;stroke:var(--or)}
+  .demo b{display:block;font-weight:800;font-size:15px}
+  .demo span{color:var(--muted);font-size:13px}
+  .demo .soon{margin-left:auto;font-size:10px;font-weight:800;letter-spacing:.1em;color:var(--or2);
+    border:1px solid rgba(255,122,60,.4);border-radius:999px;padding:4px 9px;flex:none}
+
+  /* layout */
+  .layout{display:grid;grid-template-columns:230px 1fr;gap:40px;padding:34px 0 70px}
+  nav.toc{position:sticky;top:80px;align-self:start;height:max-content}
+  nav.toc .lbl{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--dim);margin:0 0 10px}
+  nav.toc a{display:block;color:var(--muted);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:8px;border-left:2px solid transparent;transition:color .15s,background .15s}
+  nav.toc a:hover{color:var(--bone);background:var(--panel)}
+  nav.toc a.on{color:var(--bone);border-left-color:var(--or);background:var(--panel)}
+
+  main{min-width:0}
+  .art{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-bottom:16px;scroll-margin-top:78px}
+  .art h2{font-size:22px;font-weight:900;letter-spacing:-.02em;margin:0 0 6px}
+  .art .tag{color:var(--or2);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;display:block}
+  .art p{color:#D8D2C8;font-size:15px;margin:0 0 12px}
+  .art ul{margin:0 0 12px;padding-left:20px;color:#D8D2C8;font-size:15px}
+  .art li{margin-bottom:7px}
+  .art b{color:var(--bone)}
+  .note{background:var(--panel2);border-left:3px solid var(--or);border-radius:8px;padding:11px 14px;color:var(--muted);font-size:13.5px;margin:4px 0 4px}
+  .note b{color:var(--or2)}
+  .noresult{display:none;color:var(--muted);text-align:center;padding:40px;font-size:16px}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:13px}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--bone)}
+
+  @media(max-width:800px){
+    .layout{grid-template-columns:1fr;gap:0;padding-top:24px}
+    nav.toc{display:none}
+    .hero h1{font-size:32px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <a href="/" aria-label="Punchlist"><svg class="lo" viewBox="-60 -60 5507 808" role="img" aria-label="Punchlist" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" fill="#EDEAE3" d="M 680.0 226.0 L 680.0 239.0 Q 680.0 303.0 652.0 355.0 Q 624.0 407.0 574.0 436.5 Q 524.0 466.0 460.0 466.0 L 295.0 466.0 L 295.0 688.0 L 74.0 688.0 L 74.0 0.0 L 460.0 0.0 Q 524.0 0.0 574.0 29.5 Q 624.0 59.0 652.0 110.5 Q 680.0 162.0 680.0 226.0 Z M 1157.0 688.0 L 1144.0 608.0 Q 1113.0 651.0 1062.5 675.5 Q 1012.0 700.0 956.0 700.0 Q 864.0 700.0 818.0 649.0 Q 772.0 598.0 772.0 502.0 L 772.0 160.0 L 971.0 160.0 L 971.0 478.0 Q 971.0 512.0 988.5 532.5 Q 1006.0 553.0 1038.0 553.0 Q 1075.0 553.0 1098.0 529.0 Q 1121.0 505.0 1121.0 470.0 L 1121.0 160.0 L 1320.0 160.0 L 1320.0 688.0 Z M 1981.0 346.0 L 1981.0 688.0 L 1782.0 688.0 L 1782.0 370.0 Q 1782.0 336.0 1764.5 315.5 Q 1747.0 295.0 1715.0 295.0 Q 1678.0 295.0 1655.0 319.0 Q 1632.0 343.0 1632.0 378.0 L 1632.0 688.0 L 1433.0 688.0 L 1433.0 160.0 L 1596.0 160.0 L 1609.0 240.0 Q 1640.0 198.0 1690.5 173.0 Q 1741.0 148.0 1797.0 148.0 Q 1889.0 148.0 1935.0 199.0 Q 1981.0 250.0 1981.0 346.0 Z M 2656.0 373.0 L 2463.0 373.0 Q 2463.0 283.0 2365.0 283.0 Q 2267.0 283.0 2267.0 396.0 L 2267.0 453.0 Q 2267.0 565.0 2369.0 565.0 Q 2471.0 565.0 2471.0 473.0 L 2656.0 473.0 Q 2656.0 588.0 2575.5 644.0 Q 2495.0 700.0 2365.0 700.0 Q 2226.0 700.0 2147.0 630.0 Q 2068.0 560.0 2068.0 424.0 Q 2068.0 288.0 2147.0 218.0 Q 2226.0 148.0 2365.0 148.0 Q 2495.0 148.0 2575.5 203.5 Q 2656.0 259.0 2656.0 373.0 Z M 3115.0 148.0 Q 3207.0 148.0 3253.0 199.0 Q 3299.0 250.0 3299.0 346.0 L 3299.0 688.0 L 3100.0 688.0 L 3100.0 370.0 Q 3100.0 336.0 3082.5 315.5 Q 3065.0 295.0 3033.0 295.0 Q 2996.0 295.0 2973.0 319.0 Q 2950.0 343.0 2950.0 378.0 L 2950.0 688.0 L 2751.0 688.0 L 2751.0 -37.0 L 2950.0 -37.0 L 2950.0 215.0 Q 2982.0 183.0 3025.0 165.5 Q 3068.0 148.0 3115.0 148.0 Z M 3417.0 688.0 L 3417.0 -37.0 L 3616.0 -37.0 L 3616.0 688.0 Z M 3742.0 98.0 L 3742.0 -37.0 L 3941.0 -37.0 L 3941.0 98.0 Z M 3742.0 688.0 L 3742.0 160.0 L 3941.0 160.0 L 3941.0 688.0 Z M 4564.0 318.0 L 4379.0 318.0 Q 4379.0 289.0 4353.0 277.0 Q 4335.0 267.0 4308.0 267.0 Q 4236.0 267.0 4236.0 301.0 Q 4236.0 320.0 4261.0 328.0 Q 4286.0 336.0 4343.0 345.0 Q 4413.0 355.0 4460.0 368.5 Q 4507.0 382.0 4542.0 416.5 Q 4577.0 451.0 4577.0 513.0 Q 4577.0 614.0 4501.5 657.0 Q 4426.0 700.0 4304.0 700.0 Q 4234.0 700.0 4172.0 680.5 Q 4110.0 661.0 4071.0 620.0 Q 4032.0 579.0 4032.0 516.0 L 4217.0 516.0 L 4217.0 520.0 Q 4218.0 554.0 4245.5 567.5 Q 4273.0 581.0 4304.0 581.0 Q 4387.0 581.0 4387.0 542.0 Q 4387.0 522.0 4361.0 513.0 Q 4335.0 504.0 4276.0 494.0 Q 4205.0 482.0 4159.5 468.0 Q 4114.0 454.0 4080.0 420.5 Q 4046.0 387.0 4046.0 327.0 Q 4046.0 230.0 4119.5 189.0 Q 4193.0 148.0 4311.0 148.0 Q 4417.0 148.0 4490.5 189.5 Q 4564.0 231.0 4564.0 318.0 Z M 5015.0 160.0 L 5015.0 295.0 L 4903.0 295.0 L 4903.0 496.0 Q 4903.0 532.0 4915.0 548.5 Q 4927.0 565.0 4959.0 565.0 L 5015.0 565.0 L 5015.0 682.0 Q 4991.0 690.0 4953.0 695.0 Q 4915.0 700.0 4887.0 700.0 Q 4799.0 700.0 4751.5 668.0 Q 4704.0 636.0 4704.0 559.0 L 4704.0 295.0 L 4630.0 295.0 L 4630.0 160.0 L 4712.0 160.0 L 4755.0 0.0 L 4903.0 0.0 L 4903.0 160.0 Z M 240.0 234.0 A 135.0 135.0 0 1 0 510.0 234.0 A 135.0 135.0 0 1 0 240.0 234.0 Z"/><circle cx="5252.0" cy="553.0" r="135" fill="#FF5A1F"/></svg></a>
+    <div class="rt">
+      <a class="back" href="/">← Back to site</a>
+      <a class="cta" href="https://app.runpunchlist.com/signup" target="_blank" rel="noopener">Start free trial</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kick">HELP &amp; GUIDES</div>
+    <h1>Run your whole business from Punchlist.</h1>
+    <p>Everything you need to get set up and get paid — from your first lead to your year-end taxes. Search below, or pick a topic.</p>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="q" type="search" placeholder="Search the guides… (bids, contracts, get paid, portal…)" autocomplete="off" aria-label="Search help">
+    </div>
+    <div class="demo">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
+      <div><b>Watch the 2-minute walkthrough</b><span>See a real job go from lead to paid.</span></div>
+      <span class="soon">COMING SOON</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="Topics">
+    <p class="lbl">TOPICS</p>
+    <a href="#start">Getting started</a>
+    <a href="#brand">Set up your brand</a>
+    <a href="#link">Your public link</a>
+    <a href="#pipeline">Leads &amp; pipeline</a>
+    <a href="#bids">Bids &amp; packages</a>
+    <a href="#contracts">Contracts &amp; e-sign</a>
+    <a href="#paid">Getting paid</a>
+    <a href="#portal">The client portal</a>
+    <a href="#galleries">Photo galleries</a>
+    <a href="#calendar">Calendar &amp; sync</a>
+    <a href="#team">Your team</a>
+    <a href="#reports">Reports</a>
+    <a href="#taxes">Tax center</a>
+    <a href="#plans">Plans &amp; billing</a>
+    <a href="#help">Need a hand?</a>
+  </nav>
+
+  <main id="articles">
+    <div class="note" style="margin-bottom:18px">
+      <b>One app, your words.</b> Punchlist adapts to your trade. Where these guides say <b>“jobs”</b> and <b>“bids,”</b> photographers see <b>“sessions”</b> and <b>“packages,”</b> and landscapers see <b>“jobs”</b> and <b>“quotes.”</b> The steps are the same.
+    </div>
+
+    <article class="art" id="start">
+      <span class="tag">Start here</span>
+      <h2>Getting started</h2>
+      <p><b>1. Sign up.</b> Start your 30-day free trial — no credit card. Pick your trade and Punchlist pre-loads sensible services and settings you can edit.</p>
+      <p><b>2. Install it on your phone.</b> Open your Punchlist link in your phone’s browser, then <b>Share → Add to Home Screen</b> (on iPhone, use Safari). It opens full-screen like a native app and keeps working on a job with no signal — everything syncs when you’re back online.</p>
+      <p><b>3. The 5-minute setup.</b> Brand it (logo &amp; colors), confirm your services or packages, set your default terms, and enter how you take payment. Then share your link and you’re live.</p>
+    </article>
+
+    <article class="art" id="brand">
+      <span class="tag">Settings</span>
+      <h2>Set up your brand &amp; business</h2>
+      <p>Everything is self-serve under <b>Settings</b>, and changes apply instantly everywhere — the app, your client portal, your public link, and every PDF.</p>
+      <ul>
+        <li><b>Logo &amp; colors</b> — upload your logo and pick your colors, with a live preview.</li>
+        <li><b>Services / packages</b> — the work you offer and your pricing.</li>
+        <li><b>Estimator rates</b> — per-square-foot, per-unit, or flat rates so quotes take seconds.</li>
+        <li><b>Default terms</b> — deposit %, tax, and the fine print that pre-fills every bid.</li>
+        <li><b>Payment handles</b> — your Venmo, Cash App, and check payable-to name.</li>
+      </ul>
+      <div class="note"><b>Tip:</b> your customers only ever see <b>your</b> brand on the portal and PDFs — your logo, colors and name.</div>
+    </article>
+
+    <article class="art" id="link">
+      <span class="tag">Leads</span>
+      <h2>Your public link</h2>
+      <p>Every business gets one shareable link to a branded request (or inquiry) page — find it under <b>Settings</b>. Put it in your Instagram bio, on your website, or on a QR sticker on the truck.</p>
+      <p>When someone fills it out, they describe the project, pick a service and timing, and can attach photos. It lands in your pipeline as a new lead — photos already attached — and lights up your dashboard.</p>
+    </article>
+
+    <article class="art" id="pipeline">
+      <span class="tag">Day to day</span>
+      <h2>Leads &amp; the pipeline</h2>
+      <p>Every job lives on one board and moves through clear stages, so you always know the single next step to take.</p>
+      <ul>
+        <li><b>Contractors / landscapers:</b> Lead → Bid Sent → Won → In Progress → Complete (plus Lost, with a reason).</li>
+        <li><b>Photographers:</b> Inquiry → Proposal → Hold → Booked → Editing → Delivered → Complete.</li>
+      </ul>
+      <p>Filter chips show live counts. Tap <b>+</b> to add a job yourself in a few steps: pick the client, choose a service or package, set the date, and where it stands.</p>
+    </article>
+
+    <article class="art" id="bids">
+      <span class="tag">Winning work</span>
+      <h2>Bids, proposals &amp; packages</h2>
+      <p><b>Estimate on the spot.</b> The estimator turns a measurement into a labor + materials number in seconds, using your own rates.</p>
+      <p><b>Build the bid.</b> Add line items, markup (shown or hidden), and tax; totals compute live. One tap sends a clean, branded <b>proposal link</b> — no login needed for the client.</p>
+      <p><b>Photographers:</b> build packages with a price, retainer, what’s included, and add-ons. Need something off-menu? Set a one-off custom price on the fly.</p>
+      <div class="note"><b>Nudges:</b> a bid or proposal that sits quiet for two weeks surfaces on your dashboard so you can follow up before you lose it.</div>
+    </article>
+
+    <article class="art" id="contracts">
+      <span class="tag">Winning work</span>
+      <h2>Contracts &amp; e-signature</h2>
+      <p>Generate a service agreement straight from the bid or package (scope, price, deposit schedule, your terms), or upload an existing PDF.</p>
+      <p>Send it to the client portal, where the client signs by <b>typing their name</b> — legally binding under the federal ESIGN Act, time-stamped, and stored on the job. Status runs Draft → Sent → Signed.</p>
+      <div class="note"><b>Photographers:</b> the retainer locks the date. Contract signed and retainer paid both check off automatically — no follow-up texts.</div>
+    </article>
+
+    <article class="art" id="paid">
+      <span class="tag">Getting paid</span>
+      <h2>Getting paid</h2>
+      <p>Create an invoice from any job in two taps — numbered automatically and tracked as Unpaid / Partial / Paid.</p>
+      <ul>
+        <li><b>Card / Cash App Pay</b> via a Stripe “Pay Now” button on the portal.</li>
+        <li><b>Fee-free options</b> shown right beside it: Venmo, Cash App, and check.</li>
+        <li>Collect the <b>deposit or retainer</b> up front, the <b>balance</b> on completion.</li>
+        <li>Payments <b>reconcile themselves</b> — the invoice marks paid and the job updates. Unpaid balances roll up on your dashboard.</li>
+      </ul>
+    </article>
+
+    <article class="art" id="portal">
+      <span class="tag">Your customer’s view</span>
+      <h2>The client portal</h2>
+      <p>You share one link. Your client enters their email (no password) and sees their project in <b>your</b> branding, with everything they can act on:</p>
+      <ul>
+        <li><b>Approve a proposal</b> in one tap</li>
+        <li><b>Sign</b> the agreement</li>
+        <li><b>Pay</b> the deposit, retainer, or balance</li>
+        <li><b>Answer your questionnaire</b> and (for photographers) <b>view their gallery</b></li>
+        <li><b>Request more work</b> — pre-filled with their details</li>
+      </ul>
+      <p>Every signature and payment that happens here is one less trip and one less phone call.</p>
+    </article>
+
+    <article class="art" id="galleries">
+      <span class="tag">Photography</span>
+      <h2>Photo galleries</h2>
+      <p>Upload your selects and deliver a private online gallery through the client’s portal — no separate Pixieset or Pic-Time subscription, and no second link to manage.</p>
+      <ul>
+        <li>Optional <b>watermark</b> on previews and a <b>gallery expiration</b> you control.</li>
+        <li>Your delivery message and branding throughout — clients view and download from the same place they signed and paid.</li>
+      </ul>
+    </article>
+
+    <article class="art" id="calendar">
+      <span class="tag">Running the business</span>
+      <h2>Calendar &amp; calendar sync</h2>
+      <p>A month view shows your scheduled work, color-coded by status. From <b>Settings → Calendar Sync</b> you can subscribe it into <b>Google, Apple, or Outlook</b> — your booked jobs land on the calendar you already live in and refresh on their own.</p>
+    </article>
+
+    <article class="art" id="team">
+      <span class="tag">Running the business</span>
+      <h2>Your team</h2>
+      <p>Invite crew from <b>Settings</b> with a link, assign jobs to a person, and each teammate gets a “My Jobs” view of just their work. Adding people never raises your bill — flat price, whole crew.</p>
+    </article>
+
+    <article class="art" id="reports">
+      <span class="tag">Running the business</span>
+      <h2>Reports</h2>
+      <p>See revenue and trend, your win (or booking) rate, average bid or session value, pipeline value, your busiest services, and which referral sources actually bring work — always current, no spreadsheet needed.</p>
+    </article>
+
+    <article class="art" id="taxes">
+      <span class="tag">Running the business</span>
+      <h2>Tax center</h2>
+      <p>Track expenses with categories and receipt photos, keep a mileage log with per-trip purpose, and get year-end summaries by category — built to hand straight to your accountant.</p>
+    </article>
+
+    <article class="art" id="plans">
+      <span class="tag">Account</span>
+      <h2>Plans &amp; billing</h2>
+      <ul>
+        <li><b>Founding Member — $39/month, locked for life</b> (limited spots).</li>
+        <li><b>Pro — $50/month flat.</b> No per-user fees, no feature tiers, no contracts.</li>
+        <li><b>Optional $299 white-glove setup</b> — we load your services, rates, terms and brand for you.</li>
+      </ul>
+      <p>Manage your plan under <b>Billing</b>. If your trial ends, your data stays put — only creating new work pauses until you upgrade. Nobody’s business is ever held hostage.</p>
+    </article>
+
+    <article class="art" id="help">
+      <span class="tag">Support</span>
+      <h2>Need a hand?</h2>
+      <p>You get a direct line to a real human — no ticket queue.</p>
+      <ul>
+        <li>Text <b>Dorian</b> at <b>814-413-5266</b> or <b>Cole</b> at <b>814-881-9715</b></li>
+        <li>Email <b>DorianConnors@gmail.com</b></li>
+      </ul>
+      <p>We’ll happily set your business up with you on a quick call.</p>
+    </article>
+
+    <p class="noresult" id="noresult">No guides match that search. Try another word — or <a href="#help" style="color:var(--or2)">just ask us</a>.</p>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    Punchlist — run your whole business from your phone. · <a href="/">runpunchlist.com</a> · <a href="https://app.runpunchlist.com/signup" target="_blank" rel="noopener">Start free trial</a>
+  </div>
+</footer>
+
+<script>
+  // Client-side search: filter article cards by text.
+  var q = document.getElementById('q');
+  var arts = Array.prototype.slice.call(document.querySelectorAll('.art'));
+  var noresult = document.getElementById('noresult');
+  var intro = document.querySelector('#articles .note');
+  q.addEventListener('input', function(){
+    var v = q.value.trim().toLowerCase();
+    var shown = 0;
+    arts.forEach(function(a){
+      var hit = v === '' || a.textContent.toLowerCase().indexOf(v) !== -1;
+      a.style.display = hit ? '' : 'none';
+      if (hit) shown++;
+    });
+    if (intro) intro.style.display = v === '' ? '' : 'none';
+    noresult.style.display = shown === 0 ? 'block' : 'none';
+  });
+
+  // Active TOC highlight on scroll.
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  var map = {};
+  links.forEach(function(l){ map[l.getAttribute('href').slice(1)] = l; });
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          links.forEach(function(l){ l.classList.remove('on'); });
+          if (map[e.target.id]) map[e.target.id].classList.add('on');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    arts.forEach(function(a){ obs.observe(a); });
+  }
+</script>
+</body>
+</html>
