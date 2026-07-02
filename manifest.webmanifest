@@ -1,0 +1,14 @@
+{
+  "name": "Punchlist",
+  "short_name": "Punchlist",
+  "description": "Run the whole job from your phone.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0D0C0B",
+  "background_color": "#0D0C0B",
+  "icons": [
+    { "src": "/logo-kit/png/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/logo-kit/png/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/logo-kit/png/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
